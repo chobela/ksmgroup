@@ -3,6 +3,7 @@ const app = new express();
 const mongoose = require("mongoose");
 const parser = require("body-parser");
 const router = require("./routes/api");
+const cors = require("cors");
 
 const port = process.env.PORT || 4000;
 
@@ -10,6 +11,7 @@ app.listen(port, function () {
   console.log("listening on port 4000");
 });
 
+app.use(cors());
 app.use(parser.json());
 app.use("/api", router);
 
