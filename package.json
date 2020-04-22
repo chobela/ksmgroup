@@ -1,0 +1,28 @@
+{
+  "name": "ksmgroup",
+  "version": "1.0.0",
+  "description": "KSM Group Employees",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chobela/ksmgroup.git"
+  },
+  "keywords": [
+    "KSM"
+  ],
+  "author": "Chobela Kakumbi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chobela/ksmgroup/issues"
+  },
+  "homepage": "https://github.com/chobela/ksmgroup#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.10",
+    "nodemon": "^2.0.3"
+  }
+}
