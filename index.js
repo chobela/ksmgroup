@@ -13,6 +13,10 @@ app.listen(port, function () {
 app.use(parser.json());
 app.use("/api", router);
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
 mongoose.connect(
   "mongodb+srv://chobela:theresa1@cluster0-fuasl.mongodb.net/test?retryWrites=true&w=majority",
   {
