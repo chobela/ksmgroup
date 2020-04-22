@@ -13,9 +13,18 @@ app.listen(port, function () {
 app.use(parser.json());
 app.use("/api", router);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PATCH, DELETE, OPTIONS"
+  );
+  next();
+});
 
 mongoose.connect(
   "mongodb+srv://chobela:theresa1@cluster0-fuasl.mongodb.net/test?retryWrites=true&w=majority",

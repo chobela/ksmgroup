@@ -11,16 +11,18 @@ const Main = () => {
   });
 
   useEffect(() => {
-    axios.get(`/api/employees`, {}).then((res) => {
-      const data = res.data;
-      setNames(data);
-    });
+    axios
+      .get(`https://ksmgroup.herokuapp.com/api/employees`, {})
+      .then((res) => {
+        const data = res.data;
+        setNames(data);
+      });
   });
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.post("/api/employees", {
+    axios.post("https://ksmgroup.herokuapp.com/api/employees", {
       name: data.name,
       department: data.department,
     });
@@ -28,7 +30,7 @@ const Main = () => {
 
   const handleDelete = (event) => {
     event.preventDefault();
-    axios.post("/api/remove", {});
+    axios.post("https://ksmgroup.herokuapp.com/api/remove", {});
   };
 
   const handleName = (event) => {
